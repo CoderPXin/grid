@@ -133,13 +133,42 @@ demo:
   划分网格以后，容器的子元素会按照顺序，自动放置在每一个网格。默认的放置顺序是"先行后列"，即先填满第一行，再开始放入第二行，即下图数字的顺序。  
 17. grid
 ## 项目属性
-1. grid-column-start
-2. grid-column-end
-3. grid-row-start
-4. grid-row-end
-5. grid-column
-6. grid-row
-7. grid-area
+1. grid-column-start/grid-column-end grid-row-start/grid-row-end
+   表示grid子项所占据的区域的起始和终止位置，包括水平方向和垂直方向。 
+   ```
+   .item {
+        grid-column-start: <number> | <name> | span <number> | span <name> | auto
+        grid-column-end: <number> | <name> | span <number> | span <name> | auto
+        grid-row-start: <number> | <name> | span <number> | span <name> | auto
+        grid-row-end: <number> | <name> | span <number> | span <name> | auto
+   }
+   ```
+   <number>  
+   起止与第几条网格线。  
+   <name>  
+   自定义的网格线的名称。  
+   span <number>  
+   表示当前网格会自动跨越指定的网格数量。  
+   span <name>  
+   表示当前网格会自动扩展，直到命中指定的网格线名称。对于命名的网格线，有span和没有span没有区别（包括多个同名网格线）。但是，对于数值网格线，则可以看    出差异，有span则表示跨越的个数，而非网格线的序号。    
+   auto  
+   全自动，包括定位，跨度等。  
+   ```  
+   .container {
+        grid-template-columns: [第一根纵线] 80px [纵线2] auto [纵线3] 100px [最后的结束线];
+        grid-template-rows: [第一行开始] 25% [第一行结束] 100px [行3] auto [行末];
+    }
+    .item-a {
+        grid-column-start: 2;
+        grid-column-end: 纵线3;
+        grid-row-start: 第一行开始;
+        grid-row-end: 3;
+    }
+   ```  
+5. grid-column grid-column-start/grid-column-end 的缩写  
+6. grid-row grid-row-start/grid-row-end 的缩写
+7. grid-area  
+   grid-area表示当前网格所占用的区域
 8. justify-self
 9. align-self
 10. place-self
