@@ -169,6 +169,11 @@ demo:
 6. grid-row grid-row-start/grid-row-end 的缩写
 7. grid-area  
    grid-area表示当前网格所占用的区域
+   ```
+   .item {
+        grid-area: <name> | <row-start> / <column-start> / <row-end> / <column-end>;
+    }
+   ```
 8. justify-self
 9. align-self
 10. place-self
