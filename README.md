@@ -174,6 +174,9 @@ demo:
         grid-area: <name> | <row-start> / <column-start> / <row-end> / <column-end>;
     }
    ```
-8. justify-self
-9. align-self
-10. place-self
+8. justify-self 项目上水平方向的对齐方式
+9. align-self 项目上垂直方向上的对齐方式
+10. place-self justify-self 和 align-self 的简写
+## 参考
+[CSS Grid 网格布局教程](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
+[最强大的 CSS 布局 —— Grid 布局](https://juejin.cn/post/6854573220306255880#heading-22)
